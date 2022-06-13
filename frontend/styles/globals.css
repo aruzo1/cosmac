@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .link {
+    @apply font-medium hover:underline;
+  }
+}
+
 @layer base {
   * {
     font-family: "Montserrat", sans-serif;
