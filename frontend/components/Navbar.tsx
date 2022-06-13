@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { Disclosure } from "@headlessui/react";
+import { MenuIcon } from "@heroicons/react/outline";
 
-const navigation = [
+const paths = [
   { href: "/", name: "Główna" },
   { href: "/o-nas", name: "O Nas" },
   { href: "/pilniki", name: "Pilniki" },
@@ -9,22 +11,44 @@ const navigation = [
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between container py-4">
-      <Link href="/">
-        <a>
-          <img src="images/logo.png" width="200px" />
-        </a>
-      </Link>
-      <ul className="flex gap-x-4">
-        {navigation.map(({ href, name }) => (
+    <Disclosure as="nav" className="container py-4">
+      <div className="flex items-center justify-between">
+        <Link href="/">
+          <a>
+            <img src="images/logo.png" width="200px" />
+          </a>
+        </Link>
+
+        {/* Desktop */}
+        <ul className="hidden md:flex gap-x-8">
+          {paths.map(({ href, name }) => (
+            <li key={href}>
+              <Link href={href}>
+                <a className="link">{name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile */}
+        <Disclosure.Button className="md:hidden p-2 rounded-lg bg-brand text-white">
+          <MenuIcon className="w-6 h-6" />
+        </Disclosure.Button>
+      </div>
+      {/* Mobile */}
+      <Disclosure.Panel
+        as="ul"
+        className="md:hidden flex flex-col mt-4 gap-y-4"
+      >
+        {paths.map(({ href, name }) => (
           <li key={href}>
             <Link href={href}>
               <a className="link">{name}</a>
             </Link>
           </li>
         ))}
-      </ul>
-    </nav>
+      </Disclosure.Panel>
+    </Disclosure>
   );
 }
 
