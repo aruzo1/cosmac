@@ -3,6 +3,11 @@ module.exports = {
   content: ["./pages/**/*.tsx", "./components/**/*.tsx"],
   theme: {
     extend: {
+      container: {
+        screens: { DEFAULT: "1280px" },
+        center: true,
+        padding: { DEFAULT: "1rem" },
+      },
       colors: {
         brand: {
           DEFAULT: "#4ac294",
