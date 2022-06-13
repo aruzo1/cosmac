@@ -1,8 +1,14 @@
-import type { AppProps } from 'next/app'
-import "styles/globals.css"
+import type { AppProps } from "next/app";
+import Bar from "components/Bar";
+import "styles/globals.css";
 
 function Cosmac({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <Bar />
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default Cosmac
+export default Cosmac;
