@@ -15,7 +15,7 @@ function Navbar() {
       <div className="flex items-center justify-between">
         <Link href="/">
           <a>
-            <img src="images/logo.png" width="200px" />
+            <img alt="logo" src="images/logo.png" width="200px" />
           </a>
         </Link>
 
