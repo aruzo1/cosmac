@@ -6,7 +6,7 @@ function Bar() {
   return (
     <div className="py-2 bg-brand">
       <div className="flex justify-between container text-white text-sm">
-        <ul className="flex gap-x-4">
+        <ul className="flex gap-x-4 font-medium">
           <li className="flex items-center gap-x-2">
             <PhoneIcon className="w-4 h-4" />
             <span>606 308 338</span>
