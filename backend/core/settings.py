@@ -1,5 +1,8 @@
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,8 +23,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "django_filters",
+    "cloudinary",
     "corsheaders",
+    "django_filters",
     "api",
 ]
 
@@ -89,6 +93,12 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+cloudinary.config(
+    cloud_name=os.environ.get("CLOUDINARY_NAME"),
+    api_key=os.environ.get("CLOUDINARY_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_SECRET"),
+)
 
 STATIC_URL = "static/"
 
