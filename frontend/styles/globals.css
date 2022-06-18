@@ -8,6 +8,12 @@
   .link {
     @apply font-medium hover:underline;
   }
+  .btn {
+    @apply px-16 py-2 rounded-lg font-medium transition-colors;
+  }
+  .btn-black {
+    @apply btn bg-black text-white hover:bg-gray-800;
+  }
 }
 
 @layer base {
