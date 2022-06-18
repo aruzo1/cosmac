@@ -1,8 +1,7 @@
 from pathlib import Path
 import os
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+import cloudinary_storage
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,6 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "cloudinary",
+    "cloudinary_storage",
     "corsheaders",
     "django_filters",
     "api",
@@ -94,11 +94,14 @@ USE_I18N = True
 USE_TZ = True
 
 
-cloudinary.config(
-    cloud_name=os.environ.get("CLOUDINARY_NAME"),
-    api_key=os.environ.get("CLOUDINARY_KEY"),
-    api_secret=os.environ.get("CLOUDINARY_SECRET"),
-)
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get("CLOUDINARY_NAME"),
+    'API_KEY': os.environ.get("CLOUDINARY_KEY"),
+    'API_SECRET': os.environ.get("CLOUDINARY_SECRET"),
+}
+
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 STATIC_URL = "static/"
 
