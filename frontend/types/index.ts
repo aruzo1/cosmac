@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
+import { ComponentProps, ComponentType } from "react";
 
 export interface ICategory {
-  id: number;
+  id?: number;
   name: string;
-  icon?: ReactElement;
+  Icon: ComponentType<ComponentProps<"svg">>;
 }
 
 export interface IProduct {
