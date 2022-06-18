@@ -1,5 +1,5 @@
 import type { ICategory, IProduct } from "types";
-import Product from "components/category/Product";
+import Products from "components/category/Products";
 
 function Category(props: { category: ICategory; products: IProduct[] }) {
   const { category, products } = props;
@@ -7,14 +7,10 @@ function Category(props: { category: ICategory; products: IProduct[] }) {
   return (
     <section className="container py-4">
       <div className="flex items-center">
-        {category.icon}
+        <category.Icon className="w-12 h-12 text-brand" />
         <h1 className="ml-2 text-3xl font-bold">{category.name}</h1>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
-        {products.map((product) => (
-          <Product key={product.id} {...product} />
-        ))}
-      </div>
+      <Products products={products} />
     </section>
   );
 }
