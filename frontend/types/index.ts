@@ -1,3 +1,11 @@
+import { ReactElement } from "react";
+
+export interface ICategory {
+  id: number;
+  name: string;
+  icon?: ReactElement;
+}
+
 export interface IProduct {
   id: number;
   category: number;
