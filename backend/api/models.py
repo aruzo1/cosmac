@@ -1,5 +1,4 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -16,8 +15,8 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     description = models.TextField()
-    img = CloudinaryField("image")
-    table_img = CloudinaryField("image")
+    img = models.ImageField("Image")
+    table_img = models.ImageField("Table Image")
     bestseller = models.BooleanField()
     special = models.BooleanField()
 
