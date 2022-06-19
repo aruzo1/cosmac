@@ -6,7 +6,7 @@ function Form() {
   const { href, subject, body, subjectHandler, bodyHandler } = useForm();
 
   return (
-    <div className="py-4 bg-brand text-white">
+    <div className="py-8 bg-brand text-white">
       <form className="flex flex-col items-center gap-y-4 container w-[30rem] max-w-full">
         <img src="/images/logo-white.png" width="200px" />
         <h3 className="text-4xl font-bold">Zapytaj o ofertę.</h3>
