@@ -10,9 +10,13 @@ function Form() {
       <form className="flex flex-col items-center gap-y-4 container w-[35rem] max-w-full">
         <img src="/images/logo-white.png" width="200px" />
         <h3 className="text-4xl font-bold">Zapytaj o ofertę.</h3>
-        <div className="flex flex-col gap-y-2 w-full">
+        <div className="w-full">
           <label className="label">Wybierz Temat</label>
-          <select className="field" value={subject} onChange={subjectHandler}>
+          <select
+            className="w-full mt-2 field"
+            value={subject}
+            onChange={subjectHandler}
+          >
             <option value="" disabled hidden>
               Wybierz temat wiadomości
             </option>
@@ -23,10 +27,10 @@ function Form() {
             ))}
           </select>
         </div>
-        <div className="flex flex-col gap-y-2 w-full">
+        <div className="w-full">
           <label className="label">Wiadomość</label>
           <textarea
-            className="field min-h-[10rem]"
+            className="min-h-[10rem] w-full mt-2 field"
             value={body}
             onChange={bodyHandler}
           />
