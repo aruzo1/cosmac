@@ -14,6 +14,15 @@
   .btn-black {
     @apply btn bg-black text-white hover:bg-gray-800;
   }
+  .btn-white {
+    @apply btn bg-white text-black hover:bg-gray-200;
+  }
+  .label {
+    @apply font-medium;
+  }
+  .field {
+    @apply py-2 px-4 border-2 outline-none rounded-lg bg-transparent;
+  }
 }
 
 @layer base {
