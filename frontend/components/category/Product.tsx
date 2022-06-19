@@ -18,8 +18,8 @@ function Product(props: IProduct) {
         />
       </div>
       <h2 className="text-xl font-bold">{name}</h2>
-      <p className="line-clamp-4">{description}</p>
-      <button className="self-start btn-black" onClick={modal.open}>
+      <p className="line-clamp-4 text-accent-light">{description}</p>
+      <button className="self-start btn-accent" onClick={modal.open}>
         Szczegóły
       </button>
       {modal.show && <ProductModal modal={modal} product={props} />}

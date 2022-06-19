@@ -29,10 +29,10 @@ function ProductModal(props: Props) {
           </div>
           <div className="md:col-span-7">
             <h2 className="mb-2 text-4xl font-bold">{product.name}</h2>
-            <p>{product.description}</p>
+            <p className="text-accent-light">{product.description}</p>
           </div>
           <XIcon
-            className="md:col-span-1 order-first md:order-none w-8 h-8 ml-auto hover:text-gray-800 cursor-pointer transition-colors"
+            className="md:col-span-1 order-first md:order-none w-8 h-8 ml-auto hover:text-accent-light cursor-pointer transition-colors"
             onClick={modal.close}
           />
           <img
@@ -42,7 +42,7 @@ function ProductModal(props: Props) {
           />
         </div>
       </div>
-      <div className="fixed z-10 inset-0 bg-black/50" onClick={modal.close} />
+      <div className="fixed z-10 inset-0 bg-accent/50" onClick={modal.close} />
     </Portal>
   );
 }
