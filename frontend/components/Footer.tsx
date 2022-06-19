@@ -4,7 +4,7 @@ import InstagramIcon from "components/icons/InstagramIcon";
 
 function Footer() {
   return (
-    <div className="py-8 bg-black text-white">
+    <div className="py-8 bg-accent text-white">
       <footer className="flex flex-col gap-y-4 items-center container">
         <img src="/images/logo-white.png" width="140px" />
         <ul className="flex gap-x-4 font-medium">
