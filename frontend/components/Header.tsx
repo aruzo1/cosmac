@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="container py-4">
+    <header className="container py-8">
       <div className="relative h-[20rem]">
         <Image
           src="/images/header.png"
