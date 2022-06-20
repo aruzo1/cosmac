@@ -1,15 +1,18 @@
+import { useMemo } from "react";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
+import { ICategory } from "types";
 
-const navigation = [
-  { href: "/", name: "Główna" },
-  { href: "/o-nas", name: "O Nas" },
-  { href: "/pilniki", name: "Pilniki" },
-  { href: "/frezy", name: "Frezy" },
-];
+function Navbar({ categories }: { categories: ICategory[] }) {
+  const navigation = useMemo(() => {
+    return [
+      { href: "/", name: "Główna" },
+      { href: "/o-nas", name: "O Nas" },
+      ...categories.map(({ id, name }) => ({ href: "/kategoria/" + id, name })),
+    ];
+  }, [categories]);
 
-function Navbar() {
   return (
     <Disclosure as="nav" className="container py-4">
       <div className="flex items-center justify-between">
