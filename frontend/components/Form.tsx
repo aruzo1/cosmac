@@ -8,11 +8,18 @@ function Form() {
   return (
     <div className="py-8 bg-brand text-white">
       <form className="flex flex-col items-center gap-y-4 container w-[35rem] max-w-full">
-        <img src="/images/logo-white.png" width="200px" />
+        <img src="/images/logo-white.png" alt="logo" width="200px" />
         <h3 className="text-4xl font-bold">Zapytaj o ofertę.</h3>
-        <div className="flex flex-col gap-y-2 w-full">
-          <label className="label">Wybierz Temat</label>
-          <select className="field" value={subject} onChange={subjectHandler}>
+        <div className="w-full">
+          <label className="label" htmlFor="subject">
+            Wybierz Temat
+          </label>
+          <select
+            id="subject"
+            className="w-full mt-2 field"
+            value={subject}
+            onChange={subjectHandler}
+          >
             <option value="" disabled hidden>
               Wybierz temat wiadomości
             </option>
@@ -23,10 +30,13 @@ function Form() {
             ))}
           </select>
         </div>
-        <div className="flex flex-col gap-y-2 w-full">
-          <label className="label">Wiadomość</label>
+        <div className="w-full">
+          <label className="label" htmlFor="body">
+            Wiadomość
+          </label>
           <textarea
-            className="field min-h-[10rem]"
+            id="body"
+            className="min-h-[10rem] w-full mt-2 field"
             value={body}
             onChange={bodyHandler}
           />

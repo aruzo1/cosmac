@@ -1,11 +1,9 @@
 import { IProduct } from "types";
 import Product from "components/category/Product";
 
-function Products(props: { products: IProduct[] }) {
-  const { products } = props;
-
+function Products({ products }: { products: IProduct[] }) {
   return (
-    <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-2">
+    <ul className="lg:grid-cols-4 md:grid-cols-2 grid gap-4 mt-4">
       {products.map((product) => (
         <Product key={product.id} {...product} />
       ))}

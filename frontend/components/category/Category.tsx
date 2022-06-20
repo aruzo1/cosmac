@@ -1,5 +1,5 @@
 import { ComponentProps, ComponentType } from "react";
-import type { IProduct } from "types";
+import { IProduct } from "types";
 import Products from "components/category/Products";
 
 interface Props {

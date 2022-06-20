@@ -1,4 +1,5 @@
 import type { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
 import { BadgeCheckIcon, StarIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import { IProduct } from "types";
@@ -15,6 +16,9 @@ const Home: NextPage<Props> = (props) => {
 
   return (
     <div>
+      <Head>
+        <title>Cosmac - Home</title>
+      </Head>
       <Header />
       <Category
         name="Bestsellery"

@@ -9,9 +9,7 @@ interface Props {
   product: IProduct;
 }
 
-function ProductModal(props: Props) {
-  const { modal, product } = props;
-
+function ProductModal({ modal, product }: Props) {
   return (
     <Portal to="modals">
       <div
@@ -19,7 +17,7 @@ function ProductModal(props: Props) {
         style={{ top: modal.top }}
       >
         <div className="grid md:grid-cols-12 gap-4 p-4 rounded-lg bg-white">
-          <div className="relative md:col-span-4 aspect-square border border-brand rounded-lg">
+          <div className="relative md:col-span-4 aspect-square border rounded-lg border-brand">
             <Image
               src={product.img}
               alt="produkt"
@@ -28,11 +26,11 @@ function ProductModal(props: Props) {
             />
           </div>
           <div className="md:col-span-7">
-            <h2 className="mb-2 text-4xl font-bold">{product.name}</h2>
-            <p className="text-accent-light">{product.description}</p>
+            <h2 className="text-4xl font-bold">{product.name}</h2>
+            <p className="mt-2 text-accent-light">{product.description}</p>
           </div>
           <XIcon
-            className="md:col-span-1 order-first md:order-none w-8 h-8 ml-auto hover:text-accent-light cursor-pointer transition-colors"
+            className="order-first md:order-none w-8 h-8 ml-auto hover:text-accent-light cursor-pointer transition-colors"
             onClick={modal.close}
           />
           <img

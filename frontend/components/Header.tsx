@@ -10,6 +10,7 @@ function Header() {
           layout="fill"
           objectFit="cover"
           className="rounded-lg"
+          priority
         />
       </div>
     </header>
