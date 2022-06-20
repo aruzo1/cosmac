@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
-import cloudinary
-import cloudinary_storage
+import dj_database_url
+import django_on_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -12,6 +12,7 @@ DEBUG = str(os.environ.get("DEBUG")) == "1"
 
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [os.environ.get("ORIGIN")]
 
 
 INSTALLED_APPS = [
@@ -61,12 +62,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -95,9 +91,9 @@ USE_TZ = True
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get("CLOUDINARY_NAME"),
-    'API_KEY': os.environ.get("CLOUDINARY_KEY"),
-    'API_SECRET': os.environ.get("CLOUDINARY_SECRET"),
+    "CLOUD_NAME": os.environ.get("CLOUDINARY_NAME"),
+    "API_KEY": os.environ.get("CLOUDINARY_KEY"),
+    "API_SECRET": os.environ.get("CLOUDINARY_SECRET"),
 }
 
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
@@ -106,3 +102,5 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+django_on_heroku.settings(locals())
