@@ -10,7 +10,7 @@ function Product(props: IProduct) {
   return (
     <li className="flex flex-col p-4 rounded-lg drop-shadow-lg bg-white">
       <div className="relative aspect-square border rounded-lg border-brand">
-        <Image src={img} alt="produkt" className="rounded-lg" layout="fill" />
+        <Image src={img} alt="produkt" className="object-contain rounded-lg" layout="fill" />
       </div>
       <div className="flex flex-col justify-between gap-y-4 mt-4 flex-1">
         <h2 className="text-xl font-bold">{name}</h2>
