@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
-          <div id="modals" />
+          <div id="modals" className="relative z-10" />
           <Main />
           <NextScript />
         </body>

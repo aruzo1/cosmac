@@ -19,7 +19,8 @@ function Product(props: IProduct) {
           Szczegóły
         </button>
       </div>
-      {modal.show && <ProductModal modal={modal} product={props} />}
+
+      <ProductModal modal={modal} product={props} />
     </li>
   );
 }
