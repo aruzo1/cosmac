@@ -11,8 +11,11 @@ function Form() {
         <img src="/images/logo-white.png" alt="logo" width="200px" />
         <h3 className="text-4xl font-bold">Zapytaj o ofertę.</h3>
         <div className="w-full">
-          <label className="label">Wybierz Temat</label>
+          <label className="label" htmlFor="subject">
+            Wybierz Temat
+          </label>
           <select
+            id="subject"
             className="w-full mt-2 field"
             value={subject}
             onChange={subjectHandler}
@@ -28,8 +31,11 @@ function Form() {
           </select>
         </div>
         <div className="w-full">
-          <label className="label">Wiadomość</label>
+          <label className="label" htmlFor="body">
+            Wiadomość
+          </label>
           <textarea
+            id="body"
             className="min-h-[10rem] w-full mt-2 field"
             value={body}
             onChange={bodyHandler}
