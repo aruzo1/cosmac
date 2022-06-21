@@ -1,6 +1,6 @@
 function AboutWelcome() {
   return (
-    <div className="flex flex-col gap-y-4 py-8 text-center">
+    <section className="flex flex-col gap-y-4 container py-8 text-center">
       <h1 className="text-4xl font-bold">O Nas</h1>
       <p className="text-accent-light">
         Jesteśmy doświadczoną i rzetelną firmą, która specjalizuje się w
@@ -15,7 +15,7 @@ function AboutWelcome() {
         nich optymalne rozwiązania produktowe.
       </p>
       <p className="text-accent-light">Zapraszamy do współpracy!</p>
-    </div>
+    </section>
   );
 }
 
