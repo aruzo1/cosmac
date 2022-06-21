@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import axios from "axios";
 import { ICategory } from "types";
 import Bar from "components/Bar";
-import Navbar from "components/Navbar";
+import Navbar from "components/navbar/Navbar";
 import Form from "components/Form";
 import Footer from "components/Footer";
 import "styles/globals.css";
