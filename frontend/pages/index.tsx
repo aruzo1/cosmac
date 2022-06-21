@@ -11,11 +11,11 @@ interface Props {
   specialProducts: IProduct[];
 }
 
-const Home: NextPage<Props> = (props) => {
+const HomePage: NextPage<Props> = (props) => {
   const { bestsellerProducts, specialProducts } = props;
 
   return (
-    <div>
+    <>
       <Head>
         <title>Cosmac - Home</title>
       </Head>
@@ -30,7 +30,7 @@ const Home: NextPage<Props> = (props) => {
         Icon={StarIcon}
         products={specialProducts}
       />
-    </div>
+    </>
   );
 };
 
@@ -46,4 +46,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   return { props: { bestsellerProducts, specialProducts } };
 };
 
-export default Home;
+export default HomePage;

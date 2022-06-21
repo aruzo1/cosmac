@@ -1,5 +1,5 @@
-import Contacts from "components/Contacts";
-import Socials from "components/Socials";
+import Contacts from "components/common/Contacts";
+import Socials from "components/common/Socials";
 
 function Bar() {
   return (
