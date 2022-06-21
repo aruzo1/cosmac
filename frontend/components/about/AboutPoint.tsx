@@ -16,7 +16,7 @@ function AboutPoint(props: Props) {
     <div className="flex flex-col md:flex-row md:items-center gap-8">
       <div
         className={`flex flex-col md:flex-row gap-4 md:w-1/2 ${
-          left ? "order-last" : ""
+          left ? "md:order-last" : "md:order-first"
         }`}
       >
         <Icon className="w-16 h-16 text-brand" />
