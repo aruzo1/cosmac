@@ -22,7 +22,7 @@ function Navbar({ categories }: { categories: ICategory[] }) {
           </a>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop */}
         <ul className="md:flex hidden gap-x-8">
           {navigation.map(({ href, name }) => (
             <li key={href}>
@@ -33,13 +33,12 @@ function Navbar({ categories }: { categories: ICategory[] }) {
           ))}
         </ul>
 
-        {/* Mobile Button */}
-        <Disclosure.Button className="md:hidden p-2 rounded-lg bg-brand text-white">
+        {/* Mobile */}
+        <Disclosure.Button className="md:hidden btn-brand p-2">
           <MenuIcon className="w-6 h-6" />
         </Disclosure.Button>
       </div>
-
-      {/* Mobile Navigation */}
+      {/* Mobile */}
       <Disclosure.Panel
         as="ul"
         className="md:hidden flex flex-col mt-4 gap-y-4"

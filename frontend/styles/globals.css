@@ -11,6 +11,9 @@
   .btn {
     @apply px-16 py-2 rounded-lg font-medium transition-colors;
   }
+  .btn-brand {
+    @apply btn bg-brand text-white hover:bg-brand-light;
+  }
   .btn-accent {
     @apply btn bg-accent text-white hover:bg-accent-light;
   }
