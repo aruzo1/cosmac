@@ -4,6 +4,7 @@ import { ShoppingBagIcon } from "@heroicons/react/outline";
 import axios from "axios";
 import { IProduct } from "types";
 import Category from "components/category/Category";
+import NoProductsMsg from "components/NoProductsMsg";
 
 interface Props {
   term: string;
@@ -16,11 +17,15 @@ const SearchPage: NextPage<Props> = ({ term, products }) => {
       <Head>
         <title>Cosmac - {term}</title>
       </Head>
-      <Category
-        Icon={ShoppingBagIcon}
-        name={`Produkty dla "${term}"`}
-        products={products}
-      />
+      {products.length > 0 ? (
+        <Category
+          Icon={ShoppingBagIcon}
+          name={`Produkty dla "${term}"`}
+          products={products}
+        />
+      ) : (
+        <NoProductsMsg term={term} />
+      )}
     </>
   );
 };
