@@ -29,4 +29,4 @@ class ProductViewSet(ModelViewSet):
         "bestseller",
         "special",
     ]
-    search_fields = ["name"]
+    search_fields = ["name", "description"]
