@@ -11,7 +11,7 @@ function useSearchBar() {
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(1)
+
     Router.push({ pathname: "/search", query: { term } }).then(() => {
       setTerm("");
     });
