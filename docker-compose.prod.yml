@@ -10,11 +10,12 @@ services:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: secret
   backend:
-    build: ./backend
+    build: 
+      context: ./backend
+      dockerfile: dockerfile.prod
+    volumes:
+      - media:/app/media
     environment:
-      DJANGO_SUPERUSER_EMAIL: admin@gmail.com
-      DJANGO_SUPERUSER_USERNAME: admin
-      DJANGO_SUPERUSER_PASSWORD: admin
       SECRET_KEY: SUPER TAJNY SEKRET
       DEBUG: 1
       DB_HOST: db
@@ -24,11 +25,15 @@ services:
     depends_on:
       - db
   frontend:
-    build: ./frontend
+    build: 
+      context: ./frontend
+      dockerfile: dockerfile.prod
     depends_on:
       - backend
   nginx:
-    build: ./nginx
+    build: 
+      context: ./nginx
+      dockerfile: dockerfile.prod
     ports:
       - 80:80
     depends_on:
@@ -37,3 +42,4 @@ services:
 
 volumes:
   db:
+  media:
