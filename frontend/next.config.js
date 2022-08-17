@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["backend"],
   },
+  output: "standalone"
 };
 
 module.exports = nextConfig;

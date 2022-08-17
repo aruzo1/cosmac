@@ -1,9 +1,9 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import axios from "axios";
 import { ShoppingBagIcon } from "@heroicons/react/outline";
 import { ICategory, IProduct } from "types";
 import Category from "components/category/Category";
+import server from "axios/server";
 
 interface Props {
   category: ICategory;
@@ -28,8 +28,8 @@ const CategoryPage: NextPage<Props> = ({ category, products }) => {
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const id = params!.id;
 
-  const category = await axios.get("/categories/" + id).then((res) => res.data);
-  const products = await axios
+  const category = await server.get("/categories/" + id).then((res) => res.data);
+  const products = await server
     .get("/products", { params: { category: id } })
     .then((res) => res.data);
 

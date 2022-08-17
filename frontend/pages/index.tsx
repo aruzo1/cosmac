@@ -1,10 +1,10 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { BadgeCheckIcon, StarIcon } from "@heroicons/react/outline";
-import axios from "axios";
 import { IProduct } from "types";
 import Header from "components/Header";
 import Category from "components/category/Category";
+import server from "axios/server";
 
 interface Props {
   bestsellerProducts: IProduct[];
@@ -35,11 +35,11 @@ const HomePage: NextPage<Props> = (props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const bestsellerProducts = await axios
+  const bestsellerProducts = await server
     .get("/products", { params: { bestseller: true } })
     .then((res) => res.data);
 
-  const specialProducts = await axios
+  const specialProducts = await server
     .get("/products", { params: { special: true } })
     .then((res) => res.data);
 
