@@ -11,15 +11,12 @@ services:
       POSTGRES_PASSWORD: secret
   backend:
     build: ./backend
-    ports:
-      - 8000:8000
     environment:
       DJANGO_SUPERUSER_EMAIL: admin@gmail.com
       DJANGO_SUPERUSER_USERNAME: admin
       DJANGO_SUPERUSER_PASSWORD: admin
       SECRET_KEY: SUPER TAJNY SEKRET
       DEBUG: 1
-      ORIGIN: http://51.83.131.196/:8000
       DB_HOST: db
       DB_NAME: cosmac
       DB_USER: root
@@ -28,11 +25,15 @@ services:
       - db
   frontend:
     build: ./frontend
-    ports: 
-      - 80:3000
-      - 443:3000
     depends_on:
       - backend
+  nginx:
+    build: ./nginx
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+      - frontend
 
 volumes:
   db:
