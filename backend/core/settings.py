@@ -11,7 +11,6 @@ DEBUG = str(os.environ.get("DEBUG")) == "1"
 
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
-CSRF_TRUSTED_ORIGINS = ["*"]
 
 
 INSTALLED_APPS = [
@@ -97,10 +96,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = "/static/"
+STATIC_URL = "/api/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "/api/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
