@@ -1,6 +1,9 @@
 db.sqlite3
-env
+env/
 .env
-__pycache__
+__pycache__/
 .dockerignore
+dockerfile
 dockerfile.prod
+static/
+media/
