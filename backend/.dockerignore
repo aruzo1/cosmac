@@ -1,0 +1,6 @@
+db.sqlite3
+env
+.env
+__pycache__
+.dockerignore
+Dockerfile

@@ -1,7 +1,6 @@
 from pathlib import Path
 import os
 import dj_database_url
-import django_on_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -62,7 +61,16 @@ TEMPLATES = [
 WSGI_APPLICATION = "core.wsgi.application"
 
 
-DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("DB_NAME"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PASS"),
+        "HOST": os.environ.get("DB_HOST"),
+        "PORT": "5432",
+    }
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -89,18 +97,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-CLOUDINARY_STORAGE = {
-    "CLOUD_NAME": os.environ.get("CLOUDINARY_NAME"),
-    "API_KEY": os.environ.get("CLOUDINARY_KEY"),
-    "API_SECRET": os.environ.get("CLOUDINARY_SECRET"),
-}
-
-DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-
-
-STATIC_URL = "static/"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-django_on_heroku.settings(locals())

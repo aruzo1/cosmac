@@ -1,10 +1,10 @@
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { ShoppingBagIcon } from "@heroicons/react/outline";
-import axios from "axios";
 import { IProduct } from "types";
 import Category from "components/category/Category";
 import NoProductsMsg from "components/NoProductsMsg";
+import server from "axios/server";
 
 interface Props {
   term: string;
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const term = query.term;
   if (!term) return { redirect: { permanent: false, destination: "/" } };
 
-  const products = await axios
+  const products = await server
     .get("/products", { params: { search: term } })
     .then((res) => res.data);
 

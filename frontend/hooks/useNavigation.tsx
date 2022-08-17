@@ -1,11 +1,11 @@
-import axios from "axios";
+import client from "axios/client";
 import { useEffect, useMemo, useState } from "react";
 
 function useNavigation() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get("/categories").then((res) => setCategories(res.data));
+    client.get("/categories").then((res) => setCategories(res.data));
   }, []);
 
   const navigation = useMemo(() => {
