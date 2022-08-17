@@ -10,8 +10,8 @@ router.register(r"categories", CategoryViewSet)
 router.register(r"products", ProductViewSet)
 
 urlpatterns = [
-    path("", include(router.urls)),
-    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    path("api/admin/", admin.site.urls),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
