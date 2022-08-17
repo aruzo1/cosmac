@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: window.origin + ":8000",
+  baseURL: "http://51.83.131.196:8000",
 });
 
 export default client;
