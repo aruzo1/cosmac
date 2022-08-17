@@ -13,6 +13,8 @@ services:
     build: 
       context: ./backend
       dockerfile: dockerfile.prod
+    volumes:
+      - media:/app/media
     environment:
       SECRET_KEY: SUPER TAJNY SEKRET
       DEBUG: 1
@@ -40,3 +42,4 @@ services:
 
 volumes:
   db:
+  media:
