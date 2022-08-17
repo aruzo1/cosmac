@@ -20,7 +20,7 @@ services:
       SECRET_KEY: SUPER TAJNY SEKRET
       DEBUG: 1
       ORIGIN: http://localhost:8000
-      DB_HOST: backend
+      DB_HOST: db
       DB_NAME: cosmac
       DB_USER: root
       DB_PASS: secret
