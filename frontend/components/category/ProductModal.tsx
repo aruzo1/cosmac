@@ -23,7 +23,7 @@ function ProductModal({ modal, product }: Props) {
               <Image
                 src={product.img}
                 alt="produkt"
-                className="rounded-lg object-cover"
+                className="rounded-lg object-contain"
                 fill
               />
             </div>
