@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { IProduct } from "types";
 import useModal from "hooks/useModal";
 import ProductModal from "components/category/ProductModal";
@@ -10,7 +10,7 @@ function Product(props: IProduct) {
   return (
     <li className="flex flex-col p-4 rounded-lg drop-shadow-lg bg-white">
       <div className="relative aspect-square border rounded-lg border-brand">
-        <Image src={img} alt="produkt" className="object-contain rounded-lg" layout="fill" />
+        <Image src={img} alt="produkt" className="object-contain rounded-lg" fill />
       </div>
       <div className="flex flex-col justify-between gap-y-4 mt-4 flex-1">
         <h2 className="text-xl font-bold">{name}</h2>

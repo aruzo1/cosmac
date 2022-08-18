@@ -23,7 +23,7 @@ function ProductModal({ modal, product }: Props) {
               <Image
                 src={product.img}
                 alt="produkt"
-                className="rounded-lg"
+                className="rounded-lg object-contain"
                 fill
               />
             </div>
@@ -37,7 +37,7 @@ function ProductModal({ modal, product }: Props) {
             />
             <Image
               width={1108}
-              height={600}
+              height={200}
               src={product.table_img}
               alt="tabela produktu"
               className="w-full col-span-full"
