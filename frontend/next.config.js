@@ -12,6 +12,11 @@ const nextConfig = {
   images: {
     domains: ["backend"],
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
