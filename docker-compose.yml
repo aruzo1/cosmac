@@ -10,17 +10,17 @@ services:
       POSTGRES_USER: xxx
       POSTGRES_PASSWORD: xxx
   backend:
-    build: 
-      context: ./backend
-      dockerfile: dockerfile.prod
+    build: ./backend
     ports:
       - 8000:8000
     volumes:
-      - media:/app/media
+      - ./backend:/app
+      - /app/static
+      - /app/media
     environment:
       SECRET_KEY: xxx
       DEBUG: 1
-      ORIGIN: http://localhost:8000
+      ORIGIN: http://localhost:3000
       DB_HOST: db
       DB_NAME: xxx
       DB_USER: xxx
@@ -28,15 +28,15 @@ services:
     depends_on:
       - db
   frontend:
-    build: 
-      context: ./frontend
-      dockerfile: dockerfile.prod
+    build: ./frontend
     ports:
-      - 443:3000
-      - 80:3000
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
     depends_on:
       - backend
 
 volumes:
   db:
-  media:

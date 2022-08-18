@@ -1,7 +1,13 @@
 import axios from "axios";
 
-const client = axios.create({
-  baseURL: "/api/",
-});
+let baseURL;
+
+try {
+  baseURL = location.protocol + "//" + location.hostname + ":8000/api/";
+} catch {
+  baseURL = "/api/";
+}
+
+const client = axios.create({ baseURL });
 
 export default client;

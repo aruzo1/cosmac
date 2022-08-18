@@ -10,6 +10,7 @@ DEBUG = str(os.environ.get("DEBUG")) == "1"
 
 ALLOWED_HOSTS = ["*"]
 CORS_ALLOW_ALL_ORIGINS = True
+CSRF_TRUSTED_ORIGINS = [os.environ.get("ORIGIN")]
 
 
 INSTALLED_APPS = [
