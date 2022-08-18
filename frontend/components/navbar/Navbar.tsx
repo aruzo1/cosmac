@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/future/image";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon } from "@heroicons/react/outline";
 import useNavigation from "hooks/useNavigation";
 import SearchBar from "components/navbar/SearchBar";
 import Navigation from "components/navbar/Navigation";
+import logoImage from "public/images/logo.png";
 
 function Navbar() {
   const navigation = useNavigation();
@@ -13,7 +15,7 @@ function Navbar() {
       <div className="flex items-center justify-between">
         <Link href="/">
           <a>
-            <img src="/images/logo.png" alt="logo" width="180px" />
+            <Image src={logoImage} width={180} alt="logo" />
           </a>
         </Link>
 

@@ -1,4 +1,6 @@
+import Image from "next/future/image";
 import useForm from "hooks/useForm";
+import logoWhiteImage from "public/images/logo-white.png";
 
 const options = ["Prośba o ofertę", "Inne"];
 
@@ -8,7 +10,7 @@ function Form() {
   return (
     <section className="py-8 bg-brand text-white">
       <form className="flex flex-col items-center gap-y-4 container w-[35rem] max-w-full">
-        <img src="/images/logo-white.png" alt="logo" width="200px" />
+        <Image src={logoWhiteImage} width={200} alt="logo" />
         <h3 className="text-4xl font-bold">Zapytaj o ofertę.</h3>
         <div className="w-full">
           <label className="label" htmlFor="subject">

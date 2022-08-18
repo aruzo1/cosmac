@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { XIcon } from "@heroicons/react/outline";
 import type { IProduct } from "types";
 import useModal from "hooks/useModal";
@@ -24,7 +24,7 @@ function ProductModal({ modal, product }: Props) {
                 src={product.img}
                 alt="produkt"
                 className="rounded-lg"
-                layout="fill"
+                fill
               />
             </div>
             <div className="md:col-span-7">
@@ -35,7 +35,9 @@ function ProductModal({ modal, product }: Props) {
               className="order-first md:order-none w-8 h-8 ml-auto hover:text-accent-light cursor-pointer transition-colors"
               onClick={modal.close}
             />
-            <img
+            <Image
+              width={1108}
+              height={600}
               src={product.table_img}
               alt="tabela produktu"
               className="w-full col-span-full"
