@@ -37,6 +37,18 @@ services:
       - /app/.next
     depends_on:
       - backend
+  nginx:
+    build: ./nginx
+    ports:
+      - 4000:80
+    volumes:
+      - ./backend/static:/usr/share/nginx/static
+      - ./backend/media:/usr/share/nginx/media
+    depends_on:
+      - backend
+      - frontend
 
 volumes:
   db:
+  static:
+  media:

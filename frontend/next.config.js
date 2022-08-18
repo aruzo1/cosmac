@@ -10,7 +10,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   images: {
-    domains: ["backend"],
+    domains: ["nginx"],
   },
   experimental: {
     images: {
