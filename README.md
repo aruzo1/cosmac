@@ -26,7 +26,7 @@
 
 ```bash
 git clone https://github.com/aruzo1/cosmac.git
-cd portfolio
+cd cosmac
 ```
 
 ### Development
