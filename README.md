@@ -20,6 +20,7 @@
 - Tailwind
 
 ## Installation and Usage
+`You must have Docker Desktop installed`
 
 ### Clone this repository
 
@@ -28,16 +29,13 @@ git clone https://github.com/aruzo1/cosmac.git
 cd portfolio
 ```
 
-### Run Docker Compose
-`You must have Docker Desktop installed`
-
-## Development
+### Development
 
 ```bash
 docker-compose up
 ```
 
-## Production
+### Production
 
 ```bash
 docker-compose -f docker-compose.prod.yml up
