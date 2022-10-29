@@ -28,20 +28,18 @@ git clone https://github.com/aruzo1/cosmac.git
 cd portfolio
 ```
 
-### Install Dependencies
+### Run Docker Compose
+`You must have Docker Desktop installed`
+
+## Development
 
 ```bash
-npm install
+docker-compose up
 ```
 
-### Run Application
+## Production
 
 ```bash
-npm start
+docker-compose -f docker-compose.prod.yml up
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
