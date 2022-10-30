@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = str(os.environ.get("DEBUG")) == "1"
 
 ALLOWED_HOSTS = ["*"]
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [os.environ.get("ORIGIN")]
 CSRF_TRUSTED_ORIGINS = [os.environ.get("ORIGIN")]
 
 
@@ -97,7 +97,7 @@ USE_TZ = True
 STATIC_URL = "/api/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = "http://nginx:80/api/media/"
+MEDIA_URL = os.environ.get("ORIGIN") + "/api/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
