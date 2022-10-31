@@ -18,6 +18,7 @@
 - Next.js
 - Tailwind
 - Docker
+- Nginx
 
 ## Installation and Usage
 `You must have Docker Desktop installed`
