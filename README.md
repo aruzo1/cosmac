@@ -14,10 +14,10 @@
 
 ## Build With
 
-- React
 - Django
-- Next
+- Next.js
 - Tailwind
+- Docker
 
 ## Installation and Usage
 `You must have Docker Desktop installed`
